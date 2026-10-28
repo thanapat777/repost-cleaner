@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Repost Cleaner — ต้นแบบแดชบอร์ดจัดการรีโพสต์ TikTok อย่างปลอดภัย">
+<title>Repost Cleaner — จัดการรีโพสต์ให้ง่ายขึ้น</title>
+<style>
+:root{color-scheme:dark;--bg:#090b10;--panel:#121722;--panel2:#171e2a;--line:#293344;--text:#f5f7fb;--muted:#a3aec0;--cyan:#67f5e7;--pink:#ff4f76;--gold:#f7d486;--green:#8df0b1}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 82% -10%,#17333a 0,transparent 35%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,a{font:inherit}.wrap{width:min(1120px,calc(100% - 32px));margin:auto}.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:11px;font-weight:850;letter-spacing:-.4px}.brandicon{height:42px;width:42px;display:grid;place-items:center;border-radius:14px;color:#061417;font-size:21px;background:linear-gradient(135deg,var(--cyan),#83b9ff 52%,var(--pink));box-shadow:0 5px 25px #67f5e720}.brand small{display:block;font-size:11px;color:var(--muted);font-weight:500;letter-spacing:0;margin-top:2px}.pill{font-size:11px;font-weight:800;letter-spacing:.6px;border:1px solid #66502a;color:var(--gold);background:#2b2417;padding:8px 11px;border-radius:99px;white-space:nowrap}.hero{padding:48px 0 34px;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:35px}.eyebrow{font-size:12px;letter-spacing:1.7px;font-weight:850;color:var(--cyan)}h1{font-size:clamp(36px,6vw,62px);letter-spacing:-2px;line-height:1.04;margin:14px 0 18px}.lead{font-size:16px;line-height:1.8;color:var(--muted);max-width:610px}.heroactions{display:flex;gap:10px;flex-wrap:wrap;margin-top:23px}.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;padding:12px 16px;border-radius:13px;border:1px solid transparent;text-decoration:none;font-weight:800;font-size:13px;cursor:pointer;transition:transform .15s,opacity .15s}.btn:hover{transform:translateY(-1px)}.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}.primary{background:var(--cyan);color:#061416}.ghost{background:#171e29;border-color:#354052;color:var(--text)}.pink{background:var(--pink);color:white}.hero-card{border:1px solid #344150;border-radius:25px;padding:22px;background:linear-gradient(150deg,#17202b,#10141d);box-shadow:0 25px 80px #0004;transform:rotate(1deg)}.windowbar{display:flex;gap:6px;margin-bottom:20px}.dot{width:8px;height:8px;border-radius:50%;background:#495569}.previewtitle{font-weight:800;font-size:15px}.previewmuted{color:var(--muted);font-size:12px;margin-top:5px}.previewstat{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:18px 0}.mini{padding:12px;background:#202938;border-radius:12px}.mini span{display:block;color:var(--muted);font-size:10px}.mini b{font-size:21px;display:block;margin-top:6px}.fakeitem{display:flex;align-items:center;gap:10px;padding:10px 0;border-top:1px solid #2b3544}.fakecheck{height:15px;width:15px;border:1px solid #667589;border-radius:4px}.fakepic{width:34px;height:42px;border-radius:8px;background:linear-gradient(145deg,#2f5660,#3c2d48);display:grid;place-items:center}.fakecopy{font-size:11px;font-weight:750}.fakecopy small{display:block;color:var(--muted);font-size:10px;margin-top:4px;font-weight:500}.fakebadge{margin-left:auto;border:1px solid #4c5a6c;padding:4px 6px;border-radius:6px;font-size:9px;color:var(--gold)}.alert{border:1px solid #64512e;background:#2a2317;color:#ffe6ae;border-radius:14px;padding:14px 16px;font-size:12px;line-height:1.7;margin:12px 0 28px}.section{padding:22px 0 30px}.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:17px}.sectionhead h2{font-size:24px;letter-spacing:-.6px;margin:0}.sectionhead p{font-size:12px;color:var(--muted);margin:7px 0 0;line-height:1.6}.layout{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}.panel{border:1px solid var(--line);background:var(--panel);border-radius:20px;padding:21px;min-width:0}.panel h3{font-size:16px;margin:0}.muted{color:var(--muted)}.small{font-size:12px;line-height:1.65}.account{display:flex;align-items:center;gap:12px;padding:13px;background:var(--panel2);border:1px solid #303b4c;border-radius:14px;margin-top:17px}.avatar{height:42px;width:42px;border-radius:50%;display:grid;place-items:center;background:#2b394b;font-size:20px}.accountcopy{min-width:0;flex:1}.accountcopy b{font-size:13px;display:block}.accountcopy span{font-size:11px;color:var(--muted)}.tagdemo{font-size:10px;color:var(--gold);border:1px solid #64512e;border-radius:99px;padding:5px 8px}.btnrow{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:17px 0}.stat{padding:12px;border-radius:12px;background:var(--panel2)}.stat span{font-size:10px;color:var(--muted);display:block}.stat b{font-size:22px;display:block;margin-top:5px}.listhead{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:22px 0 8px}.textbtn{background:none;border:0;color:var(--cyan);font-size:12px;font-weight:800;cursor:pointer}.item{display:flex;align-items:center;gap:10px;padding:12px 1px;border-bottom:1px solid #27303d}.item:last-child{border-bottom:0}.item input{accent-color:var(--cyan);width:17px;height:17px;flex-shrink:0}.thumb{width:43px;height:53px;border-radius:9px;display:grid;place-items:center;background:linear-gradient(145deg,#2b4c55,#3c2a48);font-size:18px;flex-shrink:0}.itemcopy{flex:1;min-width:0}.itemcopy b{display:block;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.itemcopy small{display:block;color:var(--muted);font-size:10px;margin-top:4px}.itemstatus{font-size:10px;color:#c8d2e0;background:#252e3b;border-radius:6px;padding:5px 6px;white-space:nowrap}.warning{margin-top:12px;color:var(--muted);font-size:11px;line-height:1.7}.steps{display:grid;gap:17px;margin-top:18px}.step{display:flex;gap:11px}.stepnum{height:28px;width:28px;display:grid;place-items:center;border-radius:9px;background:#1d3437;color:var(--cyan);font-weight:850;font-size:12px;flex-shrink:0}.step b{font-size:12px}.step p{font-size:11px;line-height:1.7;color:var(--muted);margin:4px 0 0}.divider{height:1px;background:var(--line);margin:20px 0}.pricegrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.price{padding:20px;border:1px solid var(--line);background:var(--panel);border-radius:18px;position:relative}.price.featured{border-color:#418b86;box-shadow:0 0 0 1px #67f5e71a}.price h3{font-size:14px;margin:0 0 9px}.pricevalue{font-size:29px;font-weight:900;letter-spacing:-1px}.pricevalue small{font-size:11px;letter-spacing:0;color:var(--muted);font-weight:500}.price p{font-size:11px;line-height:1.7;color:var(--muted);min-height:39px}.price ul{list-style:none;padding:0;margin:15px 0 0;display:grid;gap:9px}.price li{font-size:11px;color:#dce3ec}.price li:before{content:"✓";color:var(--cyan);margin-right:8px;font-weight:900}.soon{font-size:9px;border:1px solid #64512e;color:var(--gold);border-radius:99px;padding:4px 7px;position:absolute;right:15px;top:16px}.security{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.securitybox{padding:16px;border-radius:15px;background:var(--panel);border:1px solid var(--line)}.securitybox .icon{font-size:21px}.securitybox b{font-size:12px;display:block;margin:10px 0 5px}.securitybox p{font-size:11px;line-height:1.7;color:var(--muted);margin:0}.footer{padding:30px 0 40px;text-align:center;color:#7f8b9f;font-size:11px;line-height:1.9}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100% - 28px);padding:13px 17px;border-radius:13px;background:#e8fffc;color:#071719;font-weight:800;font-size:12px;box-shadow:0 10px 40px #0008;display:none;z-index:5}
+@media(max-width:980px){.pricegrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:32px}.hero-card{max-width:520px;transform:none}.layout{grid-template-columns:1fr}.security{grid-template-columns:1fr}.sectionhead{align-items:start;flex-direction:column}.pricegrid{grid-template-columns:1fr}.price p{min-height:0}.nav{height:68px}.pill{font-size:9px;padding:7px 8px}}
+@media(max-width:420px){.wrap{width:calc(100% - 22px)}.hero{gap:25px}h1{letter-spacing:-1.4px}.panel{padding:15px}.itemstatus{display:none}.stats{gap:6px}.stat{padding:10px}.stat b{font-size:19px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="nav">
+  <div class="brand"><div class="brandicon">R</div><div>Repost Cleaner<small>Simple · Private · Transparent</small></div></div>
+  <div class="pill">DEMO MODE · ยังไม่เชื่อม TikTok</div>
+</header>
+
+<section class="hero">
+  <div>
+    <div class="eyebrow">REPOST MANAGEMENT, SIMPLIFIED</div>
+    <h1>เคลียร์รีโพสต์<br>แบบไม่วุ่นวาย</h1>
+    <p class="lead">ต้นแบบเว็บสำหรับช่วยจัดการรีโพสต์ TikTok ในที่เดียว เลือกรายการ ตรวจสอบก่อนดำเนินการ และควบคุมข้อมูลของตัวเองได้ง่ายขึ้น</p>
+    <div class="heroactions"><a class="btn primary" href="#workspace">ลองใช้ต้นแบบ ↓</a><a class="btn ghost" href="#security">ดูแนวทางความปลอดภัย</a><a class="btn ghost" href="#payment">วิธีชำระเงิน</a></div>
+  </div>
+  <div class="hero-card" aria-label="ภาพตัวอย่างแดชบอร์ด">
+    <div class="windowbar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+    <div class="previewtitle">Repost dashboard</div><div class="previewmuted">จัดรายการได้ในไม่กี่ขั้นตอน</div>
+    <div class="previewstat"><div class="mini"><span>รายการตัวอย่าง</span><b>05</b></div><div class="mini"><span>เลือกไว้</span><b>02</b></div><div class="mini"><span>เสร็จแล้ว</span><b>—</b></div></div>
+    <div class="fakeitem"><span class="fakecheck"></span><span class="fakepic">⚽</span><span class="fakecopy">คลิปฟุตบอล<small>ข้อมูลตัวอย่าง</small></span><span class="fakebadge">DEMO</span></div>
+    <div class="fakeitem"><span class="fakecheck"></span><span class="fakepic">♫</span><span class="fakecopy">คลิปเพลง<small>ข้อมูลตัวอย่าง</small></span><span class="fakebadge">DEMO</span></div>
+    <div class="fakeitem"><span class="fakecheck"></span><span class="fakepic">✦</span><span class="fakecopy">คลิปแรงบันดาลใจ<small>ข้อมูลตัวอย่าง</small></span><span class="fakebadge">DEMO</span></div>
+  </div>
+</section>
+
+<div class="alert">⚠️ <b>โปรดทราบ:</b> นี่คือเดโมที่ยังไม่เชื่อมต่อ TikTok จริง ปุ่มทุกปุ่มจะไม่อ่านหรือลบข้อมูลจากบัญชีจริง เพราะต้องตรวจสอบสิทธิ์ API ที่ TikTok อนุญาตก่อน</div>
+
+<section class="section" id="workspace">
+  <div class="sectionhead"><div><h2>พื้นที่ทดลองใช้งาน</h2><p>ลองเลือกหลายรายการและดูหน้าตาการทำงานได้ทันที</p></div><span class="pill">ข้อมูลจำลองเท่านั้น</span></div>
+  <div class="layout">
+    <div class="panel">
+      <h3>รายการรีโพสต์</h3><p class="small muted">จัดการรายการของตัวอย่าง · ไม่มีการเชื่อมบัญชี</p>
+      <div class="account"><div class="avatar">♪</div><div class="accountcopy"><b>บัญชีตัวอย่าง</b><span>ยังไม่ได้เชื่อมต่อ TikTok</span></div><span class="tagdemo">DEMO</span></div>
+      <div class="btnrow"><button class="btn primary" id="connect">เชื่อมต่อ TikTok</button><button class="btn ghost" id="refresh">รีเฟรชรายการ</button></div>
+      <div class="stats"><div class="stat"><span>รายการ</span><b id="total">5</b></div><div class="stat"><span>เลือกไว้</span><b id="selected">0</b></div><div class="stat"><span>ดำเนินการ</span><b>0</b></div></div>
+      <div class="listhead"><b style="font-size:12px">รายการตัวอย่าง</b><button class="textbtn" id="selectAll">เลือกทั้งหมด</button></div>
+      <div id="items">
+        <label class="item"><input type="checkbox" aria-label="เลือกคลิปฟุตบอล"><span class="thumb">⚽</span><span class="itemcopy"><b>คลิปฟุตบอลรวมจังหวะสวย ๆ</b><small>ข้อมูลตัวอย่าง · ไม่ใช่รายการจริง</small></span><span class="itemstatus">ยังไม่เลือก</span></label>
+        <label class="item"><input type="checkbox" aria-label="เลือกคลิปฟุตซอล"><span class="thumb">🥅</span><span class="itemcopy"><b>ทักษะฟุตซอลและการเลี้ยงบอล</b><small>ข้อมูลตัวอย่าง · ไม่ใช่รายการจริง</small></span><span class="itemstatus">ยังไม่เลือก</span></label>
+        <label class="item"><input type="checkbox" aria-label="เลือกคลิปเพลง"><span class="thumb">♫</span><span class="itemcopy"><b>เพลงที่กำลังเป็นกระแส</b><small>ข้อมูลตัวอย่าง · ไม่ใช่รายการจริง</small></span><span class="itemstatus">ยังไม่เลือก</span></label>
+        <label class="item"><input type="checkbox" aria-label="เลือกคลิปแรงบันดาลใจ"><span class="thumb">✦</span><span class="itemcopy"><b>คลิปแรงบันดาลใจ</b><small>ข้อมูลตัวอย่าง · ไม่ใช่รายการจริง</small></span><span class="itemstatus">ยังไม่เลือก</span></label>
+        <label class="item"><input type="checkbox" aria-label="เลือกคลิปตลก"><span class="thumb">☀</span><span class="itemcopy"><b>คลิปตลกที่บันทึกไว้</b><small>ข้อมูลตัวอย่าง · ไม่ใช่รายการจริง</small></span><span class="itemstatus">ยังไม่เลือก</span></label>
+      </div>
+      <div class="btnrow"><button class="btn pink" id="remove" disabled>ยกเลิกรีโพสต์ที่เลือก</button></div>
+      <p class="warning">การเลือกและปุ่มด้านบนเป็นเพียงการทดลองหน้าจอ ในระบบจริงจะต้องมีการยืนยันอีกครั้งก่อนสั่งการ และแสดงผลตามคำตอบจาก TikTok เท่านั้น</p>
+    </div>
+    <aside class="panel">
+      <h3>ขั้นตอนสร้างระบบจริง</h3><p class="small muted">เริ่มเล็ก ทดสอบก่อนลงทุน</p>
+      <div class="steps">
+        <div class="step"><span class="stepnum">1</span><div><b>ตรวจสอบ API และสิทธิ์</b><p>ยืนยันว่ามี API ที่ได้รับอนุญาตให้ดูรายการรีโพสต์และยกเลิกรีโพสต์ได้หรือไม่</p></div></div>
+        <div class="step"><span class="stepnum">2</span><div><b>เพิ่ม OAuth อย่างปลอดภัย</b><p>ให้ผู้ใช้อนุญาตผ่าน TikTok โดยตรง ไม่รับรหัสผ่านหรือคุกกี้จากผู้ใช้</p></div></div>
+        <div class="step"><span class="stepnum">3</span><div><b>สร้างระบบหลังบ้าน</b><p>เก็บโทเคนฝั่งเซิร์ฟเวอร์ ใช้ HTTPS ป้องกัน CSRF จำกัดการเข้าถึง และมีปุ่มถอนสิทธิ์</p></div></div>
+        <div class="step"><span class="stepnum">4</span><div><b>ทดสอบกับผู้ใช้กลุ่มเล็ก</b><p>ตรวจความถูกต้อง นโยบายความเป็นส่วนตัว และการอนุมัติแอปก่อนเปิดให้สาธารณะ</p></div></div>
+      </div>
+      <div class="divider"></div>
+      <h3 id="security">หลักความปลอดภัย</h3>
+      <p class="small muted">เราไม่ขอรหัสผ่าน TikTok ไม่เก็บคุกกี้ล็อกอิน และจะไม่บอกว่าลบสำเร็จหากไม่มีผลยืนยันจากระบบจริง</p>
+    </aside>
+  </div>
+</section>
+
+<section class="section" id="pricing">
+  <div class="sectionhead"><div><h2>แพ็กเกจและราคา</h2><p>ราคาและโควตาที่วางแผนไว้สำหรับ Repost Cleaner · ยังไม่เปิดขายจริง</p></div><span class="pill">PLANNED PRICING</span></div>
+  <div class="pricegrid">
+    <article class="price"><h3>FREE</h3><div class="pricevalue">฿0</div><p>ทดลองใช้โดยไม่มีค่าใช้จ่าย</p><ul><li>สูงสุด 50 คลิปต่อวัน</li><li>โควตารีเซ็ตทุกวัน</li><li>ไม่ต้องสมัครแพ็กเกจเสียเงิน</li></ul></article>
+    <article class="price"><span class="soon">จ่ายครั้งเดียว</span><h3>EXPRESS</h3><div class="pricevalue">฿50</div><p>สำหรับงานหนึ่งรอบที่ต้องการความรวดเร็ว</p><ul><li>สูงสุด 200 คลิปต่อรอบ</li><li>ไม่มีการต่ออายุ</li><li>ชำระครั้งเดียว</li></ul></article>
+    <article class="price featured"><span class="soon">7 วัน</span><h3>WEEKLY PRO</h3><div class="pricevalue">฿200</div><p>สำหรับคนมีรีโพสต์สะสมจำนวนมาก</p><ul><li>สูงสุด 1,000 คลิปต่อสัปดาห์</li><li>โควตารวม 7 วัน</li><li>ไม่ต่ออายุอัตโนมัติในแผนเริ่มต้น</li></ul></article>
+    <article class="price"><span class="soon">30 วัน</span><h3>MONTHLY PRO</h3><div class="pricevalue">฿579</div><p>สำหรับการใช้งานต่อเนื่อง</p><ul><li>สูงสุด 3,000 คลิปต่อเดือน</li><li>โควตารวม 30 วัน</li><li>ไม่ต่ออายุอัตโนมัติในแผนเริ่มต้น</li></ul></article>
+  </div>
+  <p class="small muted" style="margin-top:12px">โควตาทั้งหมดเป็นข้อเสนอที่วางแผนไว้ ยังไม่ใช่ความสามารถที่ยืนยันแล้ว เว็บนี้ยังไม่เชื่อม TikTok ไม่มีการลบรีโพสต์จริง และยังไม่รับชำระเงินจริง อย่าซื้อหรือโฆษณาว่าใช้งานได้จนกว่าฟีเจอร์หลักจะผ่านการทดสอบและได้รับอนุญาต</p>
+</section>
+
+
+<section class="section" id="payment">
+  <div class="sectionhead"><div><h2>เลือกแพ็กเกจ</h2><p>ตัวอย่างหน้าชำระเงิน — ยังไม่มีการเรียกเก็บเงินจริง</p></div><span class="pill">CHECKOUT DEMO</span></div>
+  <div class="layout">
+    <div class="panel">
+      <h3>แพ็กเกจของคุณ</h3>
+      <p class="small muted">เลือกแพ็กเกจเพื่อดูยอดรวม ตัวเลือกนี้ยังเป็นเดโมและจะไม่เรียกเก็บเงินจริง</p>
+      <div style="display:grid;gap:10px;margin-top:16px">
+        <label class="item" style="cursor:pointer;border:1px solid var(--line);padding:13px;border-radius:12px">
+          <input type="radio" name="plan" value="free" checked style="accent-color:var(--cyan)">
+          <span class="itemcopy"><b>FREE</b><small>50 คลิป/วัน · ฿0</small></span><b style="font-size:14px">฿0</b>
+        </label>
+        <label class="item" style="cursor:pointer;border:1px solid var(--line);padding:13px;border-radius:12px">
+          <input type="radio" name="plan" value="express" style="accent-color:var(--cyan)">
+          <span class="itemcopy"><b>EXPRESS</b><small>200 คลิป/รอบ · จ่ายครั้งเดียว</small></span><b style="font-size:14px">฿50</b>
+        </label>
+        <label class="item" style="cursor:pointer;border:1px solid var(--line);padding:13px;border-radius:12px">
+          <input type="radio" name="plan" value="weekly" style="accent-color:var(--cyan)">
+          <span class="itemcopy"><b>WEEKLY PRO</b><small>1,000 คลิป/7 วัน</small></span><b style="font-size:14px">฿200</b>
+        </label>
+        <label class="item" style="cursor:pointer;border:1px solid var(--line);padding:13px;border-radius:12px">
+          <input type="radio" name="plan" value="monthly" style="accent-color:var(--cyan)">
+          <span class="itemcopy"><b>MONTHLY PRO</b><small>3,000 คลิป/30 วัน</small></span><b style="font-size:14px">฿579</b>
+        </label>
+      </div>
+      <div class="divider"></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+        <span class="muted small">ยอดที่ต้องชำระ (เดโม)</span><strong id="checkoutTotal" style="font-size:26px">฿0</strong>
+      </div>
+      <div class="btnrow"><button class="btn primary" id="checkoutBtn">ดำเนินการชำระเงิน</button><button class="btn ghost" id="cancelPlan">ยกเลิกการเลือก</button></div>
+      <p class="warning">ปุ่มนี้เป็นเดโมเท่านั้น ไม่มีการรับเงินจริง ไม่มีการบันทึกข้อมูลบัตร และยังไม่ได้สร้างคำสั่งซื้อ</p>
+    </div>
+    <aside class="panel">
+      <h3>ช่องทางชำระเงินในอนาคต</h3>
+      <p class="small muted">เลือกผู้ให้บริการที่รองรับธุรกิจและวิธีรับเงินที่ต้องการ หลังจากสมัครและผ่านการตรวจสอบแล้ว</p>
+      <div class="steps">
+        <div class="step"><span class="stepnum">฿</span><div><b>PromptPay / QR</b><p>สะดวกสำหรับลูกค้าไทย ควรสร้าง QR ผ่านผู้ให้บริการชำระเงิน ไม่ใช้ภาพ QR ปลอม และตรวจสอบผลจาก webhook ฝั่งเซิร์ฟเวอร์</p></div></div>
+        <div class="step"><span class="stepnum">💳</span><div><b>บัตรเครดิต/เดบิต</b><p>ใช้หน้า checkout ที่ผู้ให้บริการโฮสต์ให้ เพื่อลดการสัมผัสข้อมูลบัตรของเว็บเราเอง</p></div></div>
+        <div class="step"><span class="stepnum">↻</span><div><b>ต่ออายุรายเดือน</b><p>เปิดใช้ภายหลังเท่านั้น ต้องแจ้งราคา รอบบิล วิธีหยุดต่ออายุ และเงื่อนไขคืนเงินอย่างชัดเจน</p></div></div>
+      </div>
+      <div class="divider"></div>
+      <p class="small muted"><b style="color:var(--text)">ก่อนเปิดรับเงินจริง:</b> สมัครบัญชีผู้ให้บริการในนามเจ้าของธุรกิจที่มีคุณสมบัติตามเงื่อนไข, ตั้งค่าระบบหลังบ้าน, ทดสอบ webhook และจัดทำข้อกำหนดบริการ/นโยบายคืนเงิน</p>
+    </aside>
+  </div>
+</section>
+
+<section class="section">
+  <div class="sectionhead"><div><h2>ออกแบบเพื่อความไว้ใจ</h2><p>สิ่งที่ควรมีตั้งแต่วันแรก ไม่ใช่ค่อยมาแก้ทีหลัง</p></div></div>
+  <div class="security">
+    <div class="securitybox"><div class="icon">🔐</div><b>ไม่เก็บรหัสผ่าน</b><p>การอนุญาตต้องเกิดบนหน้า TikTok ผ่านช่องทางทางการเท่านั้น</p></div>
+    <div class="securitybox"><div class="icon">🧾</div><b>บอกสถานะตามจริง</b><p>แยกสถานะกำลังทำ สำเร็จ และล้มเหลวตามผลตอบกลับจริง</p></div>
+    <div class="securitybox"><div class="icon">🗑️</div><b>ควบคุมข้อมูลได้</b><p>วางระบบถอนสิทธิ์และลบข้อมูลที่ไม่จำเป็น พร้อมนโยบายความเป็นส่วนตัว</p></div>
+  </div>
+</section>
+<footer class="footer">Repost Cleaner · Starter prototype<br>ต้นแบบนี้ไม่มีการส่งข้อมูลออก ไม่มีการล็อกอินจริง และไม่มีการเปลี่ยนแปลงบัญชี TikTok<br>ก่อนเปิดบริการจริง ต้องตรวจสอบ API และข้อกำหนดล่าสุดของ TikTok</footer>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+const boxes=[...document.querySelectorAll('#items input[type=checkbox]')],selected=document.getElementById('selected'),remove=document.getElementById('remove'),toast=document.getElementById('toast');let toastTimer;
+function notify(m){toast.textContent=m;toast.style.display='block';clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.style.display='none',3500)}
+function update(){let n=boxes.filter(x=>x.checked).length;selected.textContent=n;remove.disabled=n===0;boxes.forEach(x=>{let s=x.closest('.item').querySelector('.itemstatus');s.textContent=x.checked?'เลือกแล้ว':'ยังไม่เลือก';s.style.color=x.checked?'#67f5e7':'#c8d2e0'})}
+boxes.forEach(x=>x.addEventListener('change',update));
+document.getElementById('selectAll').addEventListener('click',()=>{let all=boxes.every(x=>x.checked);boxes.forEach(x=>x.checked=!all);document.getElementById('selectAll').textContent=all?'เลือกทั้งหมด':'ยกเลิกการเลือก';update()});
+document.getElementById('connect').addEventListener('click',()=>notify('ยังเชื่อมต่อไม่ได้ ต้องตรวจสอบและอนุมัติ API จาก TikTok ก่อน'));
+document.getElementById('refresh').addEventListener('click',()=>notify('นี่คือรายการตัวอย่าง ยังไม่ได้ดึงข้อมูลจาก TikTok'));
+remove.addEventListener('click',()=>notify('โหมดเดโม: ไม่มีการยกเลิกรีโพสต์จริง'));
+
+const planPrices={free:0,express:50,weekly:200,monthly:579};
+const planLabels={free:'FREE',express:'EXPRESS',weekly:'WEEKLY PRO',monthly:'MONTHLY PRO'};
+const totalEl=document.getElementById('checkoutTotal');
+function updateCheckout(){const chosen=document.querySelector('input[name="plan"]:checked');totalEl.textContent='฿'+(chosen?planPrices[chosen.value]:0)}
+document.querySelectorAll('input[name="plan"]').forEach(r=>r.addEventListener('change',updateCheckout));
+document.getElementById('checkoutBtn').addEventListener('click',()=>{const chosen=document.querySelector('input[name="plan"]:checked');if(!chosen)return;if(chosen.value==='free'){notify('เลือกแพ็กเกจ FREE แล้ว — โควตาที่วางแผนไว้คือ 50 คลิป/วัน แต่ยังไม่มีระบบใช้งานจริง');return}notify('เลือก '+planLabels[chosen.value]+' แล้ว ราคา ฿'+planPrices[chosen.value]+' — เดโมเท่านั้น ยังไม่มีคำสั่งซื้อหรือการรับเงินจริง')});
+document.getElementById('cancelPlan').addEventListener('click',()=>{document.querySelector('input[name="plan"][value="free"]').checked=true;updateCheckout();notify('เปลี่ยนกลับเป็นแพ็กเกจ Free แล้ว')});
+updateCheckout();
+
+</script>
+</body>
+</html>
